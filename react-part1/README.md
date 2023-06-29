@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+#React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. create-react-app
+Create a React app using create-react-app . Remove everything inside the <div className="App"> and add a <h1> element with a text "Hello World!" inside it.
 
-## Available Scripts
+Optional: If you want to test the project locally, you can download the zip file that can be found from this page. Make a directory called __test__ inside the src folder (notice the two underlines before and after test). Then, copy the files that are in the zip file into that folder. To run all the tests, run npm run test.
+If you want to run only certain tests, for example only tasks 1, you can run npm run test task1
 
-In the project directory, you can run:
+zip: tests_exercise9.zip. Note that the values in tests are different in CodeGrade! 
 
-### `npm start`
+2. Creating and using own components
+In this assignment you will create two React components: MyContainer.js and MyList.js. Inside the src folder, create another folder called components. Inside this folder, create two files: MyContainer.js and MyList.js.  App.js component should have MyContainer.js component inside it, and MyContainer.js should have MyList.js inside it. W3School has good examples for creating and using react components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Props, lists and keys
+MyList.js should take two props: header and items. Header is just a string that should be displayed in the component. items -prop has the following structure:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[ { id:String, text:String } ]
 
-### `npm test`
+In other words, the items -prop is a list of objects, and every object has two string variables: id and text. Each object in the list should be shown as an <li>-element inside ordered list (<ol>), and the content of the text variable should be shown. id should be used as a key to help React identify which items has changed. Calling should produce DOM tree similar to this (except that the ::marker is unnecessary):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Component states
+Modify the last task so that the items- prop is in state inside MyContainer-component, and give that as a prop for the MyList-component. Add a <textarea> and <button> into the MyContainer-component. By pressing the button, it should create a new object and append it to the items state. Documentation for useState can be found from here.
 
-### `npm run build`
+5. Conditional rendering
+When one of the <li>'s is pressed, it should get styled to having text-decoration: "line-through". Note that you can also give functions as props.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tip: One way to do this task is to give the items-state a new attribute, for example "clicked", that can be set false or true. Then, if the "clicked" is true, then the <li> should have text-decoration: "line-through".And then, you can use the function in MyList-component
