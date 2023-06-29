@@ -8,7 +8,7 @@ function MyList({header, items, updateItem}) {
       <ol style={{ listStyle: 'none'}}>
         {items.map((item) => 
         <li key ={item.id} 
-        style={{ display: 'list-item', textDecoration: item.clicked ? "line-through" : "none" }}
+        style={{ display: 'list-item', textDecoration: item.clicked ? "line-through" : "" }}
         onClick={()=>updateItem(item.id)}>
             {item.text} </li>)}
       </ol>
